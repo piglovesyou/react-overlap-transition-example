@@ -1,0 +1,114 @@
+.App--modal-opened {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.App-intro {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    text-align: center;
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.mmodal-root:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.96);
+    transition: opacity .2s linear;
+}
+
+.mmodal-root--enter:before { opacity: 0; }
+.mmodal-root--enter-active:before { opacity: 1; }
+.mmodal-root--exit:before { opacity: 1; }
+.mmodal-root--exit-active:before { opacity: 0; }
+
+.mmodal-root--enter .mmodal {
+    opacity: 0;
+    transform: translateY(40px);
+}
+.mmodal-root--enter-active .mmodal {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.mmodal-root--enter-done .mmodal {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.mmodal-root--exit .mmodal {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.mmodal-root--exit-active .mmodal {
+    opacity: 0;
+    transform: translateY(40px);
+}
+.mmodal-root--exit-done .mmodal {
+    display: none;
+    transform: translateY(40px);
+}
+
+.mmodal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .2s linear, transform .4s;
+}
+.mmodal .container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.mmodal__close{
+    position: fixed;
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    top: 24px;
+    right: 24px;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+}
+.mmodal__close:hover {
+    opacity: .6;
+}
+
